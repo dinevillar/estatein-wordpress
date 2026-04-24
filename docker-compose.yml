@@ -1,0 +1,56 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: estatein-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${WORDPRESS_DB_NAME}
+      MYSQL_USER: ${WORDPRESS_DB_USER}
+      MYSQL_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - estatein-network
+
+  wordpress:
+    image: wordpress:latest
+    container_name: estatein-wordpress
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    ports:
+      - "${WORDPRESS_PORT}:80"
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+    networks:
+      - estatein-network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: estatein-phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 100M
+    ports:
+      - "${PHPMYADMIN_PORT}:80"
+    networks:
+      - estatein-network
+
+volumes:
+  db_data:
+
+networks:
+  estatein-network:
+    driver: bridge

@@ -1,0 +1,18 @@
+/**
+ * Main Stylesheet
+ *
+ * @package EstateIn
+ */
+
+/* Import additional components */
+@import 'partials/shared.css';
+@import 'partials/header.css';
+@import 'partials/hero.css';
+@import 'partials/features.css';
+@import 'partials/properties.css';
+@import 'partials/testimonials.css';
+@import 'partials/services.css';
+@import 'partials/faq.css';
+@import 'partials/cta.css';
+@import 'partials/footer.css';
+@import 'partials/responsive.css';

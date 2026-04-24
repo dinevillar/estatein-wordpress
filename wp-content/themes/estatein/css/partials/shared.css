@@ -1,0 +1,165 @@
+/**
+ * Shared Components & Utilities
+ *
+ * @package EstateIn
+ */
+
+/* ===== Accent Text ===== */
+.text-accent {
+  color: #703BF7;
+}
+
+.text-white {
+  color: #FFFFFF;
+}
+
+/* ===== Section Header (shared across Properties, Testimonials, FAQ) ===== */
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-header__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-header__title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.section-header__subtitle {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== Shared Buttons ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #703BF7;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  padding: 18px 24px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #8B5CF6;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 18px 24px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: #703BF7;
+  color: #FFFFFF;
+}
+
+/* ===== Section Navigation (Pagination Arrows) ===== */
+.section-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #262626;
+}
+
+.section-nav__count {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #999999;
+  margin: 0;
+}
+
+.section-nav__count .text-white {
+  color: #FFFFFF;
+}
+
+.section-nav__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.section-nav__btn {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #262626;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.section-nav__btn:hover,
+.section-nav__btn--active {
+  background-color: #1A1A1A;
+  border-color: #262626;
+}
+
+/* ===== Pill Tags ===== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 28px;
+  padding: 8px 14px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.pill svg {
+  flex-shrink: 0;
+  color: #999999;
+}

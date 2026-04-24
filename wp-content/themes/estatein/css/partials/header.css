@@ -1,0 +1,168 @@
+/**
+ * Header Styles
+ *
+ * @package EstateIn
+ */
+
+/* ===== Top Banner ===== */
+.header__banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #1A1A1A;
+  border-bottom: 1px solid #262626;
+  padding: 18px 160px;
+  gap: 10px;
+}
+
+.header__banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__banner-text {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.header__banner-link {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.header__banner-link:hover {
+  color: #A685FA;
+}
+
+.header__banner-close {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 75px;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header__banner-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Navigation Bar ===== */
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 162px;
+  position: relative;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid #262626;
+}
+
+/* Logo */
+.header__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.header__logo-text {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+/* Nav Links (center) */
+.header__nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header__nav-links li a {
+  display: block;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.header__nav-links li a:hover,
+.header__nav-links li.current-menu-item > a,
+.header__nav-links li.current_page_item > a {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* CTA Button (right side) */
+.header__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.header__cta-btn:hover {
+  border-color: #703BF7;
+  color: #FFFFFF;
+}
+
+/* ===== Mobile Toggle ===== */
+.header__mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  color: #FFFFFF;
+  padding: 8px;
+  cursor: pointer;
+}

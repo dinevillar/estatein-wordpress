@@ -1,0 +1,245 @@
+/*
+Theme Name: EstateIn
+Theme URI: https://estatein.com
+Author: EstateIn Team
+Author URI: https://estatein.com
+Description: A premium real estate WordPress theme with dark aesthetic, property listings, testimonials, and services sections. Built for modern real estate businesses.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: estatein
+*/
+
+/* CSS Custom Properties */
+:root {
+  /* Colors - Dark Theme */
+  --color-bg-primary: #141414;
+  --color-bg-secondary: #1A1A1A;
+  --color-bg-tertiary: #262626;
+  --color-bg-card: #141414;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #E4E4E7;
+  --color-text-tertiary: #999999;
+  --color-text-muted: #666666;
+
+  --color-accent-primary: #703BF7;
+  --color-accent-secondary: #A685FA;
+  --color-accent-hover: #8B5CF6;
+
+  --color-border: #333333;
+  --color-border-light: #4D4D4D;
+
+  /* Typography */
+  --font-family-primary: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Playfair Display', Georgia, serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 4rem;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+
+  /* Layout */
+  --container-max: 1596px;
+  --container-padding: 162px;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.6);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-secondary);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Section defaults */
+section {
+  padding: 80px 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--font-size-6xl); }
+h2 { font-size: var(--font-size-5xl); }
+h3 { font-size: var(--font-size-4xl); }
+h4 { font-size: var(--font-size-3xl); }
+h5 { font-size: var(--font-size-2xl); }
+h6 { font-size: var(--font-size-xl); }
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--border-radius-full);
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border-light);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-light);
+  border-radius: var(--border-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
+

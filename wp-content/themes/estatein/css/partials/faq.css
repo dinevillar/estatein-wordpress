@@ -1,0 +1,105 @@
+/**
+ * FAQ Section Styles
+ *
+ * @package EstateIn
+ */
+
+.faq-section {
+  padding: 80px 0;
+  background-color: var(--color-bg-primary);
+}
+
+.faq__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 50px;
+}
+
+.faq__header-text {
+  flex: 1;
+  position: relative;
+}
+
+.faq__title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.faq__subtitle {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.faq__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.faq-card {
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transition: border-color 0.3s ease;
+}
+
+.faq-card:hover {
+  border-color: rgba(112, 59, 247, 0.5);
+}
+
+.faq-card__question {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.faq-card__answer {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.faq-card__btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 18px 24px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-decoration: none;
+  white-space: nowrap;
+  width: fit-content;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.faq-card__btn:hover {
+  border-color: #703BF7;
+  color: #FFFFFF;
+  background-color: rgba(112, 59, 247, 0.1);
+}

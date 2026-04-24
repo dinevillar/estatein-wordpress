@@ -1,0 +1,37 @@
+{
+  "key": "group_property_gallery",
+  "title": "Property Gallery",
+  "fields": [
+    {
+      "key": "field_property_gallery",
+      "label": "Gallery Images",
+      "name": "property_gallery",
+      "type": "gallery",
+      "required": 0,
+      "insert": "append",
+      "library": "all",
+      "min": "",
+      "max": "",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "property"
+      }
+    ]
+  ],
+  "style": "default",
+  "label_placement": "top",
+  "active": true,
+  "description": ""
+}

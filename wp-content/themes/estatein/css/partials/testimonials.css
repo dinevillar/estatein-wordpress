@@ -1,0 +1,126 @@
+/**
+ * Testimonials Section Styles
+ *
+ * @package EstateIn
+ */
+
+.testimonials-section {
+  padding: 80px 0;
+  background-color: var(--color-bg-primary);
+}
+
+/* ===== Cards Grid ===== */
+.testimonials__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* ===== Testimonial Card ===== */
+.testimonial-card {
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  transition: border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(112, 59, 247, 0.4);
+}
+
+/* Stars */
+.testimonial-card__stars {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+/* Content */
+.testimonial-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.testimonial-card__heading {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.testimonial-card__text {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Author */
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-card__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.testimonial-card__avatar--placeholder {
+  background-color: #703BF7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.testimonial-card__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.testimonial-card__name {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.testimonial-card__location {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 1.5;
+  margin: 0;
+}

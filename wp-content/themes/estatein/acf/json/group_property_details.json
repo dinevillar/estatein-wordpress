@@ -1,0 +1,93 @@
+{
+  "key": "group_property_details",
+  "title": "Property Details",
+  "fields": [
+    {
+      "key": "field_property_price",
+      "label": "Price",
+      "name": "property_price",
+      "type": "number",
+      "required": 1,
+      "default_value": 0,
+      "step": 1000,
+      "min": 0
+    },
+    {
+      "key": "field_property_bedrooms",
+      "label": "Bedrooms",
+      "name": "property_bedrooms",
+      "type": "number",
+      "required": 1,
+      "default_value": 1,
+      "min": 1,
+      "max": 20
+    },
+    {
+      "key": "field_property_bathrooms",
+      "label": "Bathrooms",
+      "name": "property_bathrooms",
+      "type": "number",
+      "required": 1,
+      "default_value": 1,
+      "min": 1,
+      "max": 10
+    },
+    {
+      "key": "field_property_sqft",
+      "label": "Square Feet",
+      "name": "property_sqft",
+      "type": "number",
+      "required": 1,
+      "default_value": 0,
+      "min": 0
+    },
+    {
+      "key": "field_property_address",
+      "label": "Address",
+      "name": "property_address",
+      "type": "text",
+      "required": 0,
+      "maxlength": 255
+    },
+    {
+      "key": "field_property_status",
+      "label": "Status",
+      "name": "property_status",
+      "type": "select",
+      "required": 1,
+      "choices": {
+        "sale": "For Sale",
+        "rent": "For Rent",
+        "sold": "Sold"
+      },
+      "default_value": "sale"
+    },
+    {
+      "key": "field_property_video",
+      "label": "Video URL",
+      "name": "property_video",
+      "type": "url",
+      "required": 0
+    },
+    {
+      "key": "field_property_virtual_tour",
+      "label": "Virtual Tour URL",
+      "name": "property_virtual_tour",
+      "type": "url",
+      "required": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "property"
+      }
+    ]
+  ],
+  "style": "default",
+  "label_placement": "top",
+  "active": true,
+  "description": ""
+}

@@ -1,0 +1,46 @@
+# Environment files
+.env
+.env.local
+.env.*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# WordPress wp-content specific ignores
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/object-cache.php
+wp-content/debug.log
+
+# Default Themes (We keep the latest as a fallback but do not track it in git)
+wp-content/themes/twentytwenty*/
+
+# Node modules and package logs (for theme development)
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+pnpm-debug.log
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build outputs (general)
+dist/
+build/

@@ -1,0 +1,76 @@
+/**
+ * CTA Section Styles
+ *
+ * @package EstateIn
+ */
+
+.cta-section {
+  position: relative;
+  border-top: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+}
+
+/* Abstract background decorations */
+.cta__bg-right {
+  position: absolute;
+  right: -92px;
+  bottom: -64px;
+  width: 725px;
+  height: 394px;
+  background: radial-gradient(ellipse at center, rgba(112, 59, 247, 0.15) 0%, transparent 70%);
+  transform: rotate(180deg) scaleY(-1);
+  pointer-events: none;
+}
+
+.cta__bg-left {
+  position: absolute;
+  left: -20px;
+  bottom: -1px;
+  width: 566px;
+  height: 308px;
+  background: radial-gradient(ellipse at bottom left, rgba(112, 59, 247, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Inner layout */
+.cta__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 250px;
+  padding: 100px 162px;
+}
+
+.cta__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cta__title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cta__subtitle {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cta-section .btn-primary {
+  flex-shrink: 0;
+}
