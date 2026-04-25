@@ -217,6 +217,15 @@ function estatein_register_property_acf() {
                     'type' => 'url',
                     'required' => 0,
                 ),
+                array(
+                    'key' => 'field_property_build_year',
+                    'label' => 'Build Year',
+                    'name' => 'property_build_year',
+                    'type' => 'number',
+                    'required' => 0,
+                    'min' => 1800,
+                    'max' => 2100,
+                ),
             ),
             'location' => array(
                 array(
@@ -289,14 +298,15 @@ function estatein_property_meta_callback($post) {
     $bedrooms = get_post_meta($post->ID, 'property_bedrooms', true);
     $bathrooms = get_post_meta($post->ID, 'property_bathrooms', true);
     $sqft = get_post_meta($post->ID, 'property_sqft', true);
+    $build_year = get_post_meta($post->ID, 'property_build_year', true);
     $address = get_post_meta($post->ID, 'property_address', true);
-    $status = get_post_meta($post->ID, 'property_status', true);
 
     echo '<table class="form-table">';
     echo '<tr><th><label for="property_price">Price</label></th><td><input type="number" id="property_price" name="property_price" value="' . esc_attr($price) . '" min="0" step="1000" style="width:100%;"></td></tr>';
     echo '<tr><th><label for="property_bedrooms">Bedrooms</label></th><td><input type="number" id="property_bedrooms" name="property_bedrooms" value="' . esc_attr($bedrooms) . '" min="1" max="20" style="width:100%;"></td></tr>';
     echo '<tr><th><label for="property_bathrooms">Bathrooms</label></th><td><input type="number" id="property_bathrooms" name="property_bathrooms" value="' . esc_attr($bathrooms) . '" min="1" max="10" style="width:100%;"></td></tr>';
     echo '<tr><th><label for="property_sqft">Square Feet</label></th><td><input type="number" id="property_sqft" name="property_sqft" value="' . esc_attr($sqft) . '" min="0" style="width:100%;"></td></tr>';
+    echo '<tr><th><label for="property_build_year">Build Year</label></th><td><input type="number" id="property_build_year" name="property_build_year" value="' . esc_attr($build_year) . '" min="1800" max="2100" style="width:100%;"></td></tr>';
     echo '<tr><th><label for="property_address">Address</label></th><td><input type="text" id="property_address" name="property_address" value="' . esc_attr($address) . '" style="width:100%;"></td></tr>';
     echo '<tr><th><label for="property_status">Status</label></th><td>';
     echo '<select id="property_status" name="property_status" style="width:100%;">';
@@ -318,7 +328,7 @@ function estatein_save_property_meta($post_id) {
         return;
     }
 
-    $fields = array('property_price', 'property_bedrooms', 'property_bathrooms', 'property_sqft', 'property_address', 'property_status');
+    $fields = array('property_price', 'property_bedrooms', 'property_bathrooms', 'property_sqft', 'property_build_year', 'property_address', 'property_status');
 
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
@@ -327,3 +337,74 @@ function estatein_save_property_meta($post_id) {
     }
 }
 add_action('save_post_property', 'estatein_save_property_meta');
+
+/**
+ * Filter properties archive via pre_get_posts
+ */
+function estatein_filter_properties_archive($query) {
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('property')) {
+        $meta_query = array();
+        $tax_query = array();
+
+        if (!empty($_GET['location'])) {
+            $location = sanitize_text_field($_GET['location']);
+            $meta_query[] = array(
+                'key' => 'property_address',
+                'value' => $location,
+                'compare' => 'LIKE'
+            );
+        }
+
+        if (!empty($_GET['property_type'])) {
+            $tax_query[] = array(
+                'taxonomy' => 'property_type',
+                'field' => 'slug',
+                'terms' => sanitize_text_field($_GET['property_type'])
+            );
+        }
+
+        if (!empty($_GET['price_range'])) {
+            $range = sanitize_text_field($_GET['price_range']);
+            if ($range === '0-500000') {
+                $meta_query[] = array('key' => 'property_price', 'value' => array(0, 500000), 'type' => 'NUMERIC', 'compare' => 'BETWEEN');
+            } elseif ($range === '500000-1000000') {
+                $meta_query[] = array('key' => 'property_price', 'value' => array(500000, 1000000), 'type' => 'NUMERIC', 'compare' => 'BETWEEN');
+            } elseif ($range === '1000000+') {
+                $meta_query[] = array('key' => 'property_price', 'value' => 1000000, 'type' => 'NUMERIC', 'compare' => '>=');
+            }
+        }
+
+        if (!empty($_GET['property_size'])) {
+            $size = sanitize_text_field($_GET['property_size']);
+            if ($size === 'small') {
+                $meta_query[] = array('key' => 'property_sqft', 'value' => 1500, 'type' => 'NUMERIC', 'compare' => '<=');
+            } elseif ($size === 'medium') {
+                $meta_query[] = array('key' => 'property_sqft', 'value' => array(1500, 3000), 'type' => 'NUMERIC', 'compare' => 'BETWEEN');
+            } elseif ($size === 'large') {
+                $meta_query[] = array('key' => 'property_sqft', 'value' => 3000, 'type' => 'NUMERIC', 'compare' => '>');
+            }
+        }
+
+        if (!empty($_GET['build_year'])) {
+            $year = sanitize_text_field($_GET['build_year']);
+            if ($year === '2020+') {
+                $meta_query[] = array('key' => 'property_build_year', 'value' => 2020, 'type' => 'NUMERIC', 'compare' => '>=');
+            } elseif ($year === '2010-2020') {
+                $meta_query[] = array('key' => 'property_build_year', 'value' => array(2010, 2020), 'type' => 'NUMERIC', 'compare' => 'BETWEEN');
+            } elseif ($year === 'pre-2010') {
+                $meta_query[] = array('key' => 'property_build_year', 'value' => 2010, 'type' => 'NUMERIC', 'compare' => '<');
+            }
+        }
+
+        if (!empty($meta_query)) {
+            $meta_query['relation'] = 'AND';
+            $query->set('meta_query', $meta_query);
+        }
+
+        if (!empty($tax_query)) {
+            $tax_query['relation'] = 'AND';
+            $query->set('tax_query', $tax_query);
+        }
+    }
+}
+add_action('pre_get_posts', 'estatein_filter_properties_archive');

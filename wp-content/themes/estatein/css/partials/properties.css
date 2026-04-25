@@ -4,9 +4,132 @@
  * @package EstateIn
  */
 
-.properties-section {
+.properties-section,
+.properties-listing-section,
+.properties-inquiry-section {
   padding: 80px 0;
   background-color: var(--color-bg-primary);
+}
+
+/* ===== Hero Section ===== */
+.properties-hero {
+  padding: 80px 0 40px;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid #262626;
+  background-image: linear-gradient(to right, rgba(26,26,26,1) 0%, rgba(20,20,20,1) 100%);
+}
+
+.properties-hero__content {
+  max-width: 1000px;
+}
+
+.properties-hero__title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.properties-hero__desc {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== Search Section ===== */
+.properties-search-section {
+  padding: 40px 0 80px;
+  background-color: var(--color-bg-primary);
+}
+
+.properties-search {
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+#property-search-form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.properties-search__inputs {
+  display: flex;
+  flex: 1;
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.properties-search__field {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0 10px;
+  border-right: 1px solid #262626;
+}
+
+.properties-search__field:last-child {
+  border-right: none;
+}
+
+.properties-search__icon {
+  color: #999999;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.properties-search__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+  outline: none;
+}
+
+.properties-search__input::placeholder {
+  color: #666666;
+}
+
+.properties-search__input option {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+}
+
+.properties-search__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #703BF7;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 24px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.properties-search__btn:hover {
+  background-color: #8B5CF6;
 }
 
 /* ===== Properties Cards Grid ===== */
@@ -144,4 +267,137 @@
 
 .property-card__footer .btn-primary {
   flex: 1;
+}
+
+/* ===== Inquiry Form Section ===== */
+.properties-inquiry-section {
+  padding: 80px 0 120px;
+  border-top: 1px solid #262626;
+}
+
+.inquiry-form-wrapper {
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 80px;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.inquiry-form__row {
+  display: flex;
+  gap: 30px;
+}
+
+.inquiry-form__row--full {
+  flex-direction: column;
+}
+
+.inquiry-form__group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inquiry-form__group label {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.inquiry-form__group input,
+.inquiry-form__group textarea,
+.inquiry-form__select-wrap select {
+  width: 100%;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  transition: border-color 0.3s ease;
+  appearance: none;
+}
+
+.inquiry-form__group input::placeholder,
+.inquiry-form__group textarea::placeholder {
+  color: #666666;
+}
+
+.inquiry-form__group input:focus,
+.inquiry-form__group textarea:focus,
+.inquiry-form__select-wrap select:focus {
+  outline: none;
+  border-color: #703BF7;
+}
+
+.inquiry-form__select-wrap {
+  position: relative;
+}
+
+.inquiry-form__select-wrap svg {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #999999;
+}
+
+.inquiry-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.inquiry-form__checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.inquiry-form__checkbox-wrap input {
+  display: none;
+}
+
+.inquiry-form__checkbox-custom {
+  width: 24px;
+  height: 24px;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.inquiry-form__checkbox-wrap input:checked + .inquiry-form__checkbox-custom {
+  background-color: #703BF7;
+  border-color: #703BF7;
+}
+
+.inquiry-form__checkbox-wrap input:checked + .inquiry-form__checkbox-custom::after {
+  content: '';
+  width: 10px;
+  height: 5px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+.inquiry-form__checkbox-label {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 16px;
+  color: #999999;
 }

@@ -92,7 +92,7 @@ function estatein_fallback_menu() {
       <li class="current-menu-item"><a href="<?php echo esc_url(home_url('/')); ?>" class="header__nav-link current">Home</a></li>
       <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>" class="header__nav-link">About Us</a></li>
       <li><a href="<?php echo esc_url(get_post_type_archive_link('property')); ?>" class="header__nav-link">Properties</a></li>
-      <li><a href="<?php echo esc_url(get_post_type_archive_link('service')); ?>" class="header__nav-link">Services</a></li>
+      <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>" class="header__nav-link">Services</a></li>
     </ul>
     <?php
 }

@@ -1,0 +1,316 @@
+/**
+ * Contact Us Page Styles
+ *
+ * @package EstateIn
+ */
+
+/* ===== Hero Section ===== */
+.contact-hero {
+  border-bottom: 1px solid #262626;
+  background-color: #141414;
+  padding: 100px 0;
+}
+
+.contact-hero__content {
+  max-width: 1358px;
+  margin-bottom: 80px;
+}
+
+.contact-hero__title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 24px;
+}
+
+.contact-hero__description {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.contact-hero__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: #703BF7;
+}
+
+.contact-card__icon {
+  margin-bottom: 20px;
+}
+
+.contact-card__text {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/* ===== Form Section ===== */
+.contact-form-section {
+  border-bottom: 1px solid #262626;
+  padding: 100px 0;
+}
+
+.contact-form-wrapper {
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 60px;
+}
+
+.estatein-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.estatein-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.estatein-form .form-group.full-width {
+  margin-bottom: 30px;
+}
+
+.estatein-form label {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.estatein-form input[type="text"],
+.estatein-form input[type="email"],
+.estatein-form input[type="tel"],
+.estatein-form select,
+.estatein-form textarea {
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.estatein-form input::placeholder,
+.estatein-form textarea::placeholder {
+  color: #666666;
+}
+
+.estatein-form select {
+  appearance: none;
+  background-image: url('../assets/images/icons/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  color: #666666;
+}
+
+.estatein-form textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+.estatein-form .form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.estatein-form .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #999999;
+  cursor: pointer;
+  margin: 0;
+}
+
+.estatein-form input[type="checkbox"] {
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #262626;
+  border-radius: 4px;
+  background-color: #1A1A1A;
+  cursor: pointer;
+  position: relative;
+}
+
+.estatein-form input[type="checkbox"]:checked {
+  background-color: #703BF7;
+  border-color: #703BF7;
+}
+
+/* ===== Office Locations ===== */
+.office-locations {
+  border-bottom: 1px solid #262626;
+  padding: 100px 0;
+}
+
+.tabs-container {
+  display: flex;
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 10px;
+  width: fit-content;
+  margin-bottom: 50px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #999999;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 18px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border: 1px solid #262626;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.location-card {
+  background-color: #141414;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.location-card .badge {
+  display: inline-block;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+  border: 1px solid #262626;
+  border-radius: 28px;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+}
+
+.location-card__title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 14px;
+}
+
+.location-card__desc {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 1.5;
+  margin: 0 0 30px;
+}
+
+.location-card__contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.location-card .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
+  border-radius: 28px;
+  padding: 14px 20px;
+  color: #FFFFFF;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.location-card .btn-secondary {
+  display: flex;
+  justify-content: center;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border: 1px solid #262626;
+  padding: 18px;
+  border-radius: 8px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.location-card .btn-secondary:hover {
+  background-color: #703BF7;
+  border-color: #703BF7;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* ===== Gallery Section ===== */
+.gallery-section {
+  background-color: #141414;
+  padding: 100px 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}

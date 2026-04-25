@@ -12,41 +12,42 @@ if (!defined('ABSPATH')) {
 /**
  * Register Service CPT
  */
-function estatein_register_service_cpt() {
+function estatein_register_service_cpt()
+{
     $labels = array(
-        'name'               => _x('Services', 'post type general name', 'estatein'),
-        'singular_name'      => _x('Service', 'post type singular name', 'estatein'),
-        'menu_name'          => _x('Services', 'admin menu', 'estatein'),
-        'name_admin_bar'     => _x('Service', 'add new on admin bar', 'estatein'),
-        'add_new'            => _x('Add New', 'service', 'estatein'),
-        'add_new_item'       => __('Add New Service', 'estatein'),
-        'new_item'           => __('New Service', 'estatein'),
-        'edit_item'          => __('Edit Service', 'estatein'),
-        'view_item'          => __('View Service', 'estatein'),
-        'all_items'          => __('All Services', 'estatein'),
-        'search_items'       => __('Search Services', 'estatein'),
-        'parent_item_colon'  => __('Parent Services:', 'estatein'),
-        'not_found'          => __('No services found.', 'estatein'),
+        'name' => _x('Services', 'post type general name', 'estatein'),
+        'singular_name' => _x('Service', 'post type singular name', 'estatein'),
+        'menu_name' => _x('Services', 'admin menu', 'estatein'),
+        'name_admin_bar' => _x('Service', 'add new on admin bar', 'estatein'),
+        'add_new' => _x('Add New', 'service', 'estatein'),
+        'add_new_item' => __('Add New Service', 'estatein'),
+        'new_item' => __('New Service', 'estatein'),
+        'edit_item' => __('Edit Service', 'estatein'),
+        'view_item' => __('View Service', 'estatein'),
+        'all_items' => __('All Services', 'estatein'),
+        'search_items' => __('Search Services', 'estatein'),
+        'parent_item_colon' => __('Parent Services:', 'estatein'),
+        'not_found' => __('No services found.', 'estatein'),
         'not_found_in_trash' => __('No services found in Trash.', 'estatein'),
     );
 
     $args = array(
-        'labels'             => $labels,
-        'description'        => __('Services offered by the real estate company', 'estatein'),
-        'public'             => true,
+        'labels' => $labels,
+        'description' => __('Services offered by the real estate company', 'estatein'),
+        'public' => true,
         'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'show_in_rest'       => true,
-        'query_var'          => true,
-        'rewrite'            => array('slug' => 'services'),
-        'capability_type'    => 'post',
-        'has_archive'        => false,
-        'hierarchical'       => false,
-        'menu_position'      => 7,
-        'menu_icon'          => 'dashicons-admin-tools',
-        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
-        'show_in_graphql'    => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'services'),
+        'capability_type' => 'post',
+        'has_archive' => false,
+        'hierarchical' => false,
+        'menu_position' => 7,
+        'menu_icon' => 'dashicons-admin-tools',
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+        'show_in_graphql' => true,
     );
 
     register_post_type('service', $args);
@@ -56,7 +57,8 @@ add_action('init', 'estatein_register_service_cpt');
 /**
  * Register ACF Field Group for Services
  */
-function estatein_register_service_acf() {
+function estatein_register_service_acf()
+{
     if (function_exists('acf_add_local_field_group')) {
 
         acf_add_local_field_group(array(
@@ -131,7 +133,8 @@ add_action('acf/init', 'estatein_register_service_acf');
 /**
  * Service meta box for admin (fallback if ACF not available)
  */
-function estatein_service_meta_boxes() {
+function estatein_service_meta_boxes()
+{
     add_meta_box(
         'service_details',
         'Service Details',
@@ -143,7 +146,8 @@ function estatein_service_meta_boxes() {
 }
 add_action('add_meta_boxes', 'estatein_service_meta_boxes');
 
-function estatein_service_meta_callback($post) {
+function estatein_service_meta_callback($post)
+{
     wp_nonce_field('estatein_service_meta', 'estatein_service_meta_nonce');
 
     $icon = get_post_meta($post->ID, 'service_icon', true);
@@ -181,7 +185,8 @@ function estatein_service_meta_callback($post) {
     echo '</table>';
 }
 
-function estatein_save_service_meta($post_id) {
+function estatein_save_service_meta($post_id)
+{
     if (!isset($_POST['estatein_service_meta_nonce']) || !wp_verify_nonce($_POST['estatein_service_meta_nonce'], 'estatein_service_meta')) {
         return;
     }

@@ -126,7 +126,9 @@
 
 .header__nav-links li a:hover,
 .header__nav-links li.current-menu-item > a,
-.header__nav-links li.current_page_item > a {
+.header__nav-links li.current_page_item > a,
+.header__nav-links li.current-post-type-archive > a,
+.header__nav-links li.current-menu-ancestor > a {
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.05);
 }

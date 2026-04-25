@@ -14,6 +14,7 @@
     initSearchForm();
     initTestimonialSlider();
     initScrollAnimations();
+    initInquiryForm();
   });
 
   /**
@@ -90,11 +91,14 @@
       const formData = new FormData(form);
       const params = new URLSearchParams();
 
-      if (formData.get('location')) params.append('location', formData.get('location'));
-      if (formData.get('property_type')) params.append('property_type', formData.get('property_type'));
+      for (const [key, value] of formData.entries()) {
+        if (value.trim() !== '') {
+          params.append(key, value);
+        }
+      }
 
       // Redirect to properties page with query parameters
-      let url = '<?php echo esc_url(get_post_type_archive_link('property')); ?>';
+      let url = form.getAttribute('action') || window.location.pathname;
       if (params.toString()) {
         url += '?' + params.toString();
       }
@@ -178,6 +182,51 @@
       card.style.transform = 'translateY(20px)';
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(card);
+    });
+  }
+
+  /**
+   * Inquiry Form AJAX
+   */
+  function initInquiryForm() {
+    const form = document.querySelector('.inquiry-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      formData.append('action', 'submit_property_inquiry');
+      if (typeof estatein_ajax !== 'undefined') {
+        formData.append('nonce', estatein_ajax.nonce);
+      }
+
+      fetch(estatein_ajax.ajax_url, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        if (data.success) {
+          alert(data.data.message);
+          form.reset();
+        } else {
+          alert(data.data.message || 'An error occurred. Please try again.');
+        }
+      })
+      .catch(err => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert('An error occurred. Please try again.');
+      });
     });
   }
 

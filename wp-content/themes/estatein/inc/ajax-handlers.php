@@ -157,3 +157,35 @@ function estatein_newsletter_subscribe() {
 }
 add_action('wp_ajax_newsletter_subscribe', 'estatein_newsletter_subscribe');
 add_action('wp_ajax_nopriv_newsletter_subscribe', 'estatein_newsletter_subscribe');
+
+/**
+ * Property Inquiry form AJAX
+ */
+function estatein_submit_property_inquiry() {
+    check_ajax_referer('estatein_nonce', 'nonce');
+
+    $first_name = isset($_POST['first_name']) ? sanitize_text_field($_POST['first_name']) : '';
+    $last_name = isset($_POST['last_name']) ? sanitize_text_field($_POST['last_name']) : '';
+    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+    $phone = isset($_POST['phone']) ? sanitize_text_field($_POST['phone']) : '';
+    $message = isset($_POST['message']) ? sanitize_textarea_field($_POST['message']) : '';
+    
+    if (empty($first_name) || empty($last_name) || empty($email) || empty($message)) {
+        wp_send_json_error(array('message' => 'Please fill in all required fields.'));
+    }
+    
+    if (!is_email($email)) {
+        wp_send_json_error(array('message' => 'Please enter a valid email address.'));
+    }
+
+    $to = get_option('admin_email');
+    $subject = 'New Property Inquiry from ' . $first_name . ' ' . $last_name;
+    $body = "Name: $first_name $last_name\nEmail: $email\nPhone: $phone\nLocation: {$_POST['inquiry_location']}\nType: {$_POST['inquiry_type']}\nMessage: $message";
+    $headers = array('Content-Type: text/plain; charset=UTF-8', 'From: ' . get_bloginfo('name') . ' <' . $to . '>', 'Reply-To: ' . $email);
+    
+    wp_mail($to, $subject, $body, $headers);
+
+    wp_send_json_success(array('message' => 'Thank you! Your inquiry has been sent successfully.'));
+}
+add_action('wp_ajax_submit_property_inquiry', 'estatein_submit_property_inquiry');
+add_action('wp_ajax_nopriv_submit_property_inquiry', 'estatein_submit_property_inquiry');
