@@ -21,13 +21,7 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: radial-gradient(
-    ellipse at 50% 0%,
-    rgba(112, 59, 247, 0.4) 0%,
-    rgba(26, 26, 26, 0.2) 40%,
-    rgba(20, 20, 20, 0.9) 70%,
-    rgba(20, 20, 20, 1) 100%
-  );
+  background-color: var(--color-grey-08, #141414);
 }
 
 /* Abstract decorative shapes */
@@ -48,12 +42,14 @@
 }
 
 .hero__decor-shape--1 {
-  width: 600px;
-  height: 600px;
-  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
-  top: -200px;
-  right: -100px;
-  opacity: 0.15;
+  width: 1200px;
+  height: 1200px;
+  background: radial-gradient(circle, rgba(112, 59, 247, 0.15) 0%, rgba(20, 20, 20, 0) 70%);
+  top: 50%;
+  right: -200px;
+  transform: translateY(-50%);
+  filter: blur(100px);
+  opacity: 1;
 }
 
 .hero__decor-shape--2 {
@@ -79,26 +75,31 @@
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 1400px;
-  padding: 0 var(--container-padding);
-  margin: 0 auto;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .hero__content-inner {
   display: flex;
   align-items: center;
-  gap: var(--spacing-3xl);
+  justify-content: space-between;
+  width: 100%;
+  gap: 0;
   animation: fadeInUp 1s ease-out;
 }
 
 .hero__left {
   flex: 1;
-  max-width: 750px;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 60px;
   align-items: flex-start;
   justify-content: center;
+  padding-left: max(var(--container-padding, 20px), calc((100vw - 1596px) / 2));
+  padding-right: 60px;
 }
 
 .hero__text-container {
@@ -109,6 +110,7 @@
 
 .hero__right {
   flex: 1;
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -217,12 +219,17 @@
 }
 
 /* Hero Right Side - Image and Badge */
+.hero__image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+}
+
 .hero__image-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  aspect-ratio: 4/5;
-  border-radius: var(--border-radius-2xl);
+  height: 814px;
+  border-radius: var(--border-radius-2xl) 0 0 var(--border-radius-2xl);
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
@@ -245,9 +252,9 @@
 
 .hero__badge {
   position: absolute;
-  left: -40px;
+  left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   width: 160px;
   height: 160px;
   background-color: var(--color-grey-08, #141414);

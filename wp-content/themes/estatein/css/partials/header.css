@@ -117,11 +117,12 @@
   font-weight: 500;
   color: #999999;
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: 1px solid transparent;
   line-height: 1.5;
   white-space: nowrap;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header__nav-links li a:hover,
@@ -130,7 +131,8 @@
 .header__nav-links li.current-post-type-archive > a,
 .header__nav-links li.current-menu-ancestor > a {
   color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #141414;
+  border-color: #262626;
 }
 
 /* CTA Button (right side) */

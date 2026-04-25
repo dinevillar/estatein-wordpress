@@ -6,8 +6,8 @@
 
 /* ========== Large Desktop (up to 1600px) ========== */
 @media (max-width: 1600px) {
-  .container {
-    padding: 0 80px;
+  :root {
+    --container-padding: 80px;
   }
 
   .header__nav {
@@ -26,8 +26,8 @@
 
 /* ========== Medium Desktop (up to 1200px) ========== */
 @media (max-width: 1200px) {
-  .container {
-    padding: 0 40px;
+  :root {
+    --container-padding: 40px;
   }
 
   .header__nav {
@@ -82,8 +82,8 @@
 
 /* ========== Tablet (up to 900px) ========== */
 @media (max-width: 900px) {
-  .container {
-    padding: 0 24px;
+  :root {
+    --container-padding: 24px;
   }
 
   /* Header Nav */
@@ -199,8 +199,8 @@
 
 /* ========== Mobile (up to 600px) ========== */
 @media (max-width: 600px) {
-  .container {
-    padding: 0 16px;
+  :root {
+    --container-padding: 16px;
   }
 
   /* Header */

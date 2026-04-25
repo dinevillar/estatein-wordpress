@@ -144,8 +144,8 @@ $locations = !is_wp_error($location_terms) && $location_terms ? $location_terms 
           <?php foreach ($features as $feature) : ?>
             <div style="display: flex; align-items: center; gap: 0.75rem; background: var(--color-bg-tertiary); border-left: 3px solid var(--color-accent-primary); padding: 1rem 1.25rem; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;">
               <div style="color: var(--color-text-primary);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/>
                 </svg>
               </div>
               <span style="color: var(--color-text-secondary); font-size: 1.125rem;"><?php echo esc_html($feature->name); ?></span>
@@ -193,10 +193,8 @@ $locations = !is_wp_error($location_terms) && $location_terms ? $location_terms 
             <label style="display: block; color: var(--color-text-primary); font-weight: 500; margin-bottom: 0.75rem;">Selected Property</label>
             <div style="position: relative;">
               <input type="text" value="<?php echo esc_attr(get_the_title()); ?>, <?php echo esc_attr($address); ?>" readonly style="width: 100%; background: var(--color-bg-primary); border: 1px solid var(--color-border); padding: 1.25rem; border-radius: var(--border-radius-md); color: var(--color-text-primary);">
-              <svg style="position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary);" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 16L16 12L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg style="position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary);" width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
               </svg>
             </div>
           </div>

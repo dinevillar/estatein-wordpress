@@ -32,8 +32,8 @@ if (!defined('ABSPATH')) {
       <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>" class="header__banner-link">Learn More</a>
     </div>
     <button class="header__banner-close" aria-label="Close banner">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
       </svg>
     </button>
   </div>
@@ -59,8 +59,8 @@ if (!defined('ABSPATH')) {
 
      <!-- Mobile Toggle -->
      <button class="header__mobile-toggle" aria-label="Toggle navigation">
-       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-         <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
        </svg>
      </button>
 
@@ -87,12 +87,16 @@ if (!defined('ABSPATH')) {
 <!-- Fallback menu if no menu is set -->
 <?php
 function estatein_fallback_menu() {
+    $is_home = is_front_page() || is_home() ? 'current-menu-item' : '';
+    $is_about = is_page('about') ? 'current-menu-item' : '';
+    $is_property = is_post_type_archive('property') || is_singular('property') ? 'current-menu-item' : '';
+    $is_services = is_page('services') ? 'current-menu-item' : '';
     ?>
     <ul class="header__nav-links">
-      <li class="current-menu-item"><a href="<?php echo esc_url(home_url('/')); ?>" class="header__nav-link current">Home</a></li>
-      <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>" class="header__nav-link">About Us</a></li>
-      <li><a href="<?php echo esc_url(get_post_type_archive_link('property')); ?>" class="header__nav-link">Properties</a></li>
-      <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>" class="header__nav-link">Services</a></li>
+      <li class="<?php echo esc_attr($is_home); ?>"><a href="<?php echo esc_url(home_url('/')); ?>" class="header__nav-link">Home</a></li>
+      <li class="<?php echo esc_attr($is_about); ?>"><a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>" class="header__nav-link">About Us</a></li>
+      <li class="<?php echo esc_attr($is_property); ?>"><a href="<?php echo esc_url(get_post_type_archive_link('property')); ?>" class="header__nav-link">Properties</a></li>
+      <li class="<?php echo esc_attr($is_services); ?>"><a href="<?php echo esc_url(get_permalink(get_page_by_path('services'))); ?>" class="header__nav-link">Services</a></li>
     </ul>
     <?php
 }

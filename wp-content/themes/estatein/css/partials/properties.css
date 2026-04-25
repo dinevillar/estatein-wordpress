@@ -234,11 +234,11 @@
   gap: 10px;
 }
 
-/* Footer: Price + CTA */
 .property-card__footer {
   display: flex;
-  align-items: flex-end;
-  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   margin-top: auto;
 }
 
@@ -246,7 +246,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  min-width: 103px;
+  min-width: max-content;
 }
 
 .property-card__price-label {
@@ -267,6 +267,23 @@
 
 .property-card__footer .btn-primary {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px;
+  background-color: #703BF7;
+  color: #FFFFFF;
+  border-radius: 10px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.property-card__footer .btn-primary:hover {
+  background-color: #8B5CF6;
 }
 
 /* ===== Inquiry Form Section ===== */

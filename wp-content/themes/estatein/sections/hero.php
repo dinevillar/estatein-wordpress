@@ -66,9 +66,11 @@ $featured_property = get_posts(array(
 
       <!-- Right Column: Image and Badge -->
       <div class="hero__right">
-        <div class="hero__image-container">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero-building.png'); ?>" alt="Modern Building" class="hero__building-image">
-          <div class="hero__image-overlay"></div>
+        <div class="hero__image-wrapper">
+          <div class="hero__image-container">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero-building.png'); ?>" alt="Modern Building" class="hero__building-image">
+            <div class="hero__image-overlay"></div>
+          </div>
           
           <!-- Spinning Badge -->
           <div class="hero__badge">
@@ -81,7 +83,9 @@ $featured_property = get_posts(array(
               </text>
             </svg>
             <div class="hero__badge-center">
-              <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero-arrow.svg'); ?>" alt="Arrow" class="hero__badge-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="hero__badge-arrow" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clip-rule="evenodd"/>
+              </svg>
             </div>
           </div>
         </div>
@@ -91,8 +95,8 @@ $featured_property = get_posts(array(
 
   <!-- Scroll Indicator -->
   <div class="hero__scroll">
-    <svg class="hero__scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 5v14M5 12l7 7 7-7"/>
+    <svg class="hero__scroll-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"/>
     </svg>
     <span>Scroll</span>
   </div>
