@@ -2,6 +2,8 @@
 
 This project contains the Estatein WordPress theme and the local development environment via Docker.
 
+## Demo Video: https://www.loom.com/share/d501f5b67a0b42409b15944341843079
+
 ## Prerequisites
 
 - Docker and Docker Compose installed on your system.
