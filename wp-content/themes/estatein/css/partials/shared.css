@@ -26,6 +26,15 @@
 .section-header__text {
   flex: 1;
   min-width: 0;
+  position: relative;
+}
+
+.section-header__icon {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  width: 68px;
+  height: 30px;
 }
 
 .section-header__title {
@@ -93,6 +102,35 @@
 .btn-outline:hover {
   border-color: #703BF7;
   color: #FFFFFF;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  padding: 18px 24px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #262626;
+  border-color: #262626;
+}
+
+.btn-sm {
+  padding: 14px 20px;
+  font-size: 16px;
 }
 
 /* ===== Section Navigation (Pagination Arrows) ===== */

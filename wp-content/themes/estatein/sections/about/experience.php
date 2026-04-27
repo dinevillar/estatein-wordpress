@@ -45,11 +45,7 @@ $steps = [
 <section class="about-experience" id="estatein-experience">
   <div class="container">
     <div class="about-experience__header">
-      <div class="section-star-decor" aria-hidden="true">
-        <span class="star-dot star-dot--lg"></span>
-        <span class="star-dot star-dot--md"></span>
-        <span class="star-dot star-dot--sm"></span>
-      </div>
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-star-decor">
       <h2 class="about-experience__heading">Navigating the Estatein Experience</h2>
       <p class="about-experience__paragraph">At Estatein, we've designed a straightforward process to help you find and purchase your dream property with ease. Here's a step-by-step guide to how it all works.</p>
     </div>

@@ -13,33 +13,29 @@ $team_members = [
   [
     'name' => 'Max Mitchell',
     'role' => 'Founder',
-    'image' => get_template_directory_uri() . '/assets/images/team/team-1.jpg',
+    'image' => get_template_directory_uri() . '/assets/images/team/team-1.png',
   ],
   [
     'name' => 'Sarah Johnson',
     'role' => 'Chief Real Estate Officer',
-    'image' => get_template_directory_uri() . '/assets/images/team/team-2.jpg',
+    'image' => get_template_directory_uri() . '/assets/images/team/team-2.png',
   ],
   [
     'name' => 'David Brown',
     'role' => 'Head of Property Management',
-    'image' => get_template_directory_uri() . '/assets/images/team/team-3.jpg',
+    'image' => get_template_directory_uri() . '/assets/images/team/team-3.png',
   ],
   [
     'name' => 'Michael Turner',
     'role' => 'Legal Counsel',
-    'image' => get_template_directory_uri() . '/assets/images/team/team-4.jpg',
+    'image' => get_template_directory_uri() . '/assets/images/team/team-4.png',
   ],
 ];
 ?>
 <section class="about-team" id="meet-the-team">
   <div class="container">
     <div class="about-team__header">
-      <div class="section-star-decor" aria-hidden="true">
-        <span class="star-dot star-dot--lg"></span>
-        <span class="star-dot star-dot--md"></span>
-        <span class="star-dot star-dot--sm"></span>
-      </div>
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-star-decor">
       <h2 class="about-team__heading">Meet the Estatein Team</h2>
       <p class="about-team__paragraph">At Estatein, our success is driven by the dedication and expertise of our team. Get to know the people behind our mission to make your real estate dreams a reality.</p>
     </div>

@@ -27,11 +27,7 @@ $achievements = [
 <section class="about-achievements" id="our-achievements">
   <div class="container">
     <div class="about-achievements__header">
-      <div class="section-star-decor" aria-hidden="true">
-        <span class="star-dot star-dot--lg"></span>
-        <span class="star-dot star-dot--md"></span>
-        <span class="star-dot star-dot--sm"></span>
-      </div>
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-star-decor">
       <h2 class="about-achievements__heading">Our Achievements</h2>
       <p class="about-achievements__paragraph">Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.</p>
     </div>

@@ -22,7 +22,8 @@ $testimonials = get_posts(array(
     <!-- Section Header -->
     <div class="section-header">
       <div class="section-header__text">
-        <h2 class="section-header__title">What Our <span class="text-accent">Clients Say</span></h2>
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-header__icon">
+        <h2 class="section-header__title">What Our Clients Say</h2>
         <p class="section-header__subtitle">
           Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.
         </p>

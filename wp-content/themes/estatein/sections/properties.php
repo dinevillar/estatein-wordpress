@@ -30,7 +30,8 @@ $property_query = new WP_Query($args);
     <!-- Section Header -->
     <div class="section-header">
       <div class="section-header__text">
-        <h2 class="section-header__title">Featured <span class="text-accent">Properties</span></h2>
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-header__icon">
+        <h2 class="section-header__title">Featured Properties</h2>
         <p class="section-header__subtitle">
           Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click "View Details" for more information.
         </p>

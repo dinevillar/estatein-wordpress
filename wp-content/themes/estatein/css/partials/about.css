@@ -11,22 +11,10 @@
   position: absolute;
   top: -40px;
   left: -20px;
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
+  width: 68px;
+  height: 30px;
   pointer-events: none;
 }
-
-.star-dot {
-  display: block;
-  border-radius: 50%;
-  background-color: #703BF7;
-  flex-shrink: 0;
-}
-
-.star-dot--lg { width: 30px; height: 30px; }
-.star-dot--md { width: 18px; height: 18px; }
-.star-dot--sm { width: 8px;  height: 8px;  }
 
 
 /* =============================================
@@ -396,7 +384,7 @@
 
 .about-experience__step-label span {
   font-family: 'Urbanist', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #FFFFFF;
   line-height: 1.5;
@@ -404,13 +392,15 @@
 
 /* Step card body */
 .about-experience__step-card {
-  border: 1px solid #703BF7;
-  border-radius: 0 12px 12px 12px;
-  padding: 50px;
-  background-image: linear-gradient(138.833deg, rgba(112, 59, 247, 0.25) 0%, rgba(112, 59, 247, 0) 60%);
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 40px;
+  background-color: #141414;
+  background-image: linear-gradient(135deg, rgba(112, 59, 247, 0.12) 0%, rgba(112, 59, 247, 0) 40%);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  height: 100%;
 }
 
 .about-experience__step-heading {
@@ -639,11 +629,10 @@
   background-color: #141414;
   border: 1px solid #262626;
   border-radius: 12px;
-  box-shadow: 0 0 0 8px #191919;
-  padding: 50px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
   min-width: 0;
 }
 
@@ -753,7 +742,11 @@
    ABOUT PAGE RESPONSIVE
    ============================================= */
 @media (max-width: 1200px) {
-  .about-hero__inner,
+  .about-hero__inner {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+
   .about-values__inner {
     flex-direction: column;
     gap: 50px;
@@ -777,7 +770,16 @@
 }
 
 @media (max-width: 960px) {
-  .about-hero__stats,
+  .about-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .about-hero__stat-card:last-child {
+    grid-column: span 2;
+  }
+
   .about-achievements__cards {
     flex-direction: column;
     gap: 20px;
@@ -814,28 +816,42 @@
 
   .about-clients__card-top {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 20px;
+  }
+
+  .about-clients__card-top .btn-secondary {
+    width: 100%;
+  }
+
+  .about-team__say-hello {
+    width: 100%;
   }
 }
 
 @media (max-width: 640px) {
+  section {
+    padding: 60px 0;
+  }
+
   .about-hero__heading,
   .about-values__heading,
   .about-achievements__heading,
   .about-experience__heading,
   .about-team__heading,
   .about-clients__heading {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .about-hero__stat-number {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .about-achievements__card,
-  .about-experience__step-card {
-    padding: 30px;
+  .about-experience__step-card,
+  .about-team__card,
+  .about-clients__card {
+    padding: 24px;
   }
 
   .about-team__grid {
@@ -843,8 +859,10 @@
   }
 
   .about-clients__details {
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: start;
   }
 
   .about-clients__divider {

@@ -14,23 +14,30 @@ get_header();
 
 <main id="primary" class="site-main properties-page">
 
-  <!-- Hero Section -->
+  <!-- Hero & Search Section -->
   <section class="properties-hero">
     <div class="container">
       <div class="properties-hero__content">
         <h1 class="properties-hero__title">Find Your Dream Property</h1>
         <p class="properties-hero__desc">Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every lifestyle, your journey</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Search/Filter Bar -->
-  <section class="properties-search-section">
-    <div class="container">
-      <div class="properties-search">
+      <div class="properties-search-wrapper">
         <form id="property-search-form" method="GET" action="<?php echo esc_url(get_post_type_archive_link('property')); ?>">
-          <div class="properties-search__inputs">
-            
+          <input type="hidden" name="post_type" value="property">
+          <!-- Main Search Bar -->
+          <div class="properties-search__main">
+            <input type="text" name="s" placeholder="Search For A Property" class="properties-search__main-input" value="<?php echo esc_attr(get_search_query()); ?>">
+            <button type="submit" class="properties-search__btn">
+              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
+              </svg>
+              Find Property
+            </button>
+          </div>
+
+          <!-- Filters Bar -->
+          <div class="properties-search__filters">
             <div class="properties-search__field">
               <span class="properties-search__icon">
                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -96,15 +103,7 @@ get_header();
                 <option value="pre-2010" <?php selected($_GET['build_year'] ?? '', 'pre-2010'); ?>>Before 2010</option>
               </select>
             </div>
-
           </div>
-          
-          <button type="submit" class="properties-search__btn">
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
-            </svg>
-            Find Property
-          </button>
         </form>
       </div>
     </div>
@@ -116,6 +115,7 @@ get_header();
       <!-- Section Header -->
       <div class="section-header">
         <div class="section-header__text">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-header__icon">
           <h2 class="section-header__title">Discover a World of Possibilities</h2>
           <p class="section-header__subtitle">
             Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home
@@ -236,6 +236,7 @@ get_header();
     <div class="container">
       <div class="section-header">
         <div class="section-header__text">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-header__icon">
           <h2 class="section-header__title">Let's Make it Happen</h2>
           <p class="section-header__subtitle">
             Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will reach out to you with personalized opportunities and expert advice.

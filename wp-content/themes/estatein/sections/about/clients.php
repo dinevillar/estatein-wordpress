@@ -31,11 +31,7 @@ $clients = [
 <section class="about-clients" id="our-clients">
   <div class="container">
     <div class="about-clients__header">
-      <div class="section-star-decor" aria-hidden="true">
-        <span class="star-dot star-dot--lg"></span>
-        <span class="star-dot star-dot--md"></span>
-        <span class="star-dot star-dot--sm"></span>
-      </div>
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-star-decor">
       <h2 class="about-clients__heading">Our Valued Clients</h2>
       <p class="about-clients__paragraph">At Estatein, we have had the privilege of working with a diverse range of clients across various industries. Here are some of the clients we've had the pleasure of serving</p>
     </div>
@@ -54,7 +50,7 @@ $clients = [
         <div class="about-clients__details">
           <div class="about-clients__detail">
             <div class="about-clients__detail-label">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
               <span>Domain</span>
             </div>
             <p class="about-clients__detail-value"><?php echo esc_html($client['domain']); ?></p>
@@ -64,7 +60,7 @@ $clients = [
 
           <div class="about-clients__detail">
             <div class="about-clients__detail-label">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
               <span>Category</span>
             </div>
             <p class="about-clients__detail-value"><?php echo esc_html($client['category']); ?></p>

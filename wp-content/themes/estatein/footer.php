@@ -24,10 +24,7 @@ if (!defined('ABSPATH')) {
             <?php else : ?>
               <a href="<?php echo esc_url(home_url('/')); ?>" class="footer__logo-link">
                 <span class="footer__logo-symbol">
-                  <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="48" height="48" rx="8" fill="#703BF7"/>
-                    <path d="M24 8L8 20V40H20V28H28V40H40V20L24 8Z" fill="white"/>
-                  </svg>
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/logo.png'); ?>" alt="Estatein Logo" class="footer__logo-img" width="32" height="32" />
                 </span>
                 <span class="footer__logo-text">Estatein</span>
               </a>

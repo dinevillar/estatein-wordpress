@@ -114,7 +114,7 @@
     border: 1px solid #262626;
   }
 
-  .header__nav-links.is-open {
+  .header__nav-links.active {
     display: flex;
   }
 
@@ -126,18 +126,38 @@
     flex-wrap: wrap;
   }
 
+  .header__cta-btn {
+    display: none;
+  }
+
   /* Hero */
   .hero__headline {
     font-size: 40px !important;
   }
 
-  .hero__stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   /* Features */
   .features__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .feature-card {
+    padding: 24px 16px;
+    gap: 16px;
+  }
+  
+  .feature-card__icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .feature-card__icon-wrapper::before {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .feature-card__icon-wrapper::after {
+    width: 60px;
+    height: 60px;
   }
 
   /* Properties */
@@ -179,21 +199,28 @@
     font-size: 36px;
   }
 
+  .cta-section .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
   /* Footer */
   .footer__columns {
-    flex-wrap: wrap;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
   }
 
   .footer__bottom-inner {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column-reverse;
+    gap: 24px;
     text-align: center;
+    padding: 30px 0;
   }
 
   .footer__bottom-left {
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
 }
 
@@ -219,22 +246,6 @@
     font-size: 32px !important;
   }
 
-  .hero__stats {
-    grid-template-columns: 1fr;
-  }
-
-  .hero__actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero__actions .btn-primary,
-  .hero__actions .btn-outline {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-
   /* Section headers */
   .section-header__title,
   .faq__title {
@@ -243,12 +254,12 @@
 
   /* Property card */
   .property-card__image {
-    margin: 20px 20px 0;
-    width: calc(100% - 40px);
+    margin: 24px 24px 0;
+    width: calc(100% - 48px);
   }
 
   .property-card__body {
-    padding: 24px 20px 24px;
+    padding: 24px;
   }
 
   /* Testimonial card */
@@ -264,14 +275,32 @@
   /* Footer */
   .footer__grid {
     padding: 60px 0;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .footer__brand {
+    width: 100%;
+    align-items: flex-start;
   }
 
   .footer__columns {
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 16px;
+    width: 100%;
   }
 
   .footer__column {
-    width: 100%;
+    width: auto;
+  }
+
+  .footer__column:last-child {
+    grid-column: span 2;
+  }
+
+  .footer__email-input {
+    max-width: 100%;
   }
 
   /* CTA */

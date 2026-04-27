@@ -16,11 +16,7 @@ if (!defined('ABSPATH')) {
       <!-- Left Column -->
       <div class="about-hero__left">
         <div class="about-hero__text-wrap">
-          <div class="section-star-decor" aria-hidden="true">
-            <span class="star-dot star-dot--lg"></span>
-            <span class="star-dot star-dot--md"></span>
-            <span class="star-dot star-dot--sm"></span>
-          </div>
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-star-decor">
           <h1 class="about-hero__heading">Our Journey</h1>
           <p class="about-hero__paragraph">Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary. Over the years, we've expanded our reach, forged valuable partnerships, and gained the trust of countless clients.</p>
         </div>
@@ -46,7 +42,7 @@ if (!defined('ABSPATH')) {
       <div class="about-hero__right">
         <div class="about-hero__image-wrap">
           <img
-            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about-hero.jpg'); ?>"
+            src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/about.png'); ?>"
             alt="Estatein team at work"
             class="about-hero__image"
           >

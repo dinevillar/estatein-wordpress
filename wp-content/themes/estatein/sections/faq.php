@@ -13,8 +13,9 @@ if (!defined('ABSPATH')) {
   <div class="container">
     <!-- Section Header -->
     <div class="faq__header">
-      <div class="faq__header-text">
-        <h2 class="faq__title">Frequently Asked <span class="text-accent">Questions</span></h2>
+      <div class="faq__header-text section-header__text">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/abstract-design.svg'); ?>" alt="Abstract Design" class="section-header__icon">
+        <h2 class="faq__title">Frequently Asked Questions</h2>
         <p class="faq__subtitle">
           Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.
         </p>
